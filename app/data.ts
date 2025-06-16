@@ -6,6 +6,13 @@ type Project = {
   id: string
 }
 
+type Technologies = {
+  name: string
+  icon: string
+  link: string
+  id: string
+}
+
 type WorkExperience = {
   company: string
   title: string
@@ -26,6 +33,15 @@ type SocialLink = {
   label: string
   link: string
 }
+
+export const TECHNOLOGIES: Technologies[] = [
+  {
+    name: 'Python',
+    icon: 'logos:python',
+    link: 'https://www.python.org/',
+    id: 'tech1',
+  },
+]
 
 export const PROJECTS: Project[] = [
   {
@@ -49,27 +65,27 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Liberty Mutual Insurance',
+    title: 'Sr. Data Engineer',
+    start: '2020',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: 'https://www.libertymutual.com/',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'University of New Hampshire',
+    title: 'Data Engineer',
+    start: '2017',
+    end: '2020',
+    link: 'https://www.unh.edu/',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'Southern New Hampshire University',
+    title: 'LMS Developer',
+    start: '2013',
+    end: '2017',
+    link: 'https://www.snhu.edu/',
     id: 'work3',
   },
 ]
@@ -100,20 +116,16 @@ export const BLOG_POSTS: BlogPost[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/pattiestrada',
   },
   {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    label: 'X (Twitter)',
+    link: 'https://x.com/p_lesstrada',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.linkedin.com/in/patricia-estrada-a9819865/',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'estrada.patti@gmail.com'
