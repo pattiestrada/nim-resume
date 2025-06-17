@@ -8,7 +8,7 @@ type Project = {
 
 type Technologies = {
   name: string
-  icon: string
+  icon: string // URL to the icon image
   link: string
   id: string
 }
@@ -18,6 +18,14 @@ type WorkExperience = {
   title: string
   start: string
   end: string
+  link: string
+  id: string
+}
+
+type Education = {
+  institution: string
+  degree: string
+  fieldOfStudy: string
   link: string
   id: string
 }
@@ -37,9 +45,15 @@ type SocialLink = {
 export const TECHNOLOGIES: Technologies[] = [
   {
     name: 'Python',
-    icon: 'logos:python',
+    icon: '/logos/python.svg',
     link: 'https://www.python.org/',
     id: 'tech1',
+  },
+  {
+    name: 'Snowflake',
+    icon: '/logos/snowflake.svg',
+    link: 'https://www.snowflake.com/',
+    id: 'tech2',
   },
 ]
 
@@ -89,6 +103,24 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work3',
   },
 ]
+
+export const EDUCATION: Education[] = [
+  {
+    institution: 'University of New Hampshire',
+    degree: 'Bachelor of Science',
+    fieldOfStudy: 'Computer Science',
+    link: 'https://www.unh.edu/',
+    id: 'edu1',
+  },
+  {
+    institution: 'University of New Hampshire',
+    degree: 'Master of Science',
+    fieldOfStudy: 'Cybersecurity',
+    link: 'https://www.unh.edu/',
+    id: 'edu2',
+  },
+]
+
 
 export const BLOG_POSTS: BlogPost[] = [
   {
