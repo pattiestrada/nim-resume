@@ -55,6 +55,36 @@ export const TECHNOLOGIES: Technologies[] = [
     link: 'https://www.snowflake.com/',
     id: 'tech2',
   },
+  {
+    name: 'Node.js',
+    icon: '/logos/nodejs.svg',
+    link: 'https://nodejs.org/',
+    id: 'tech3',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: '/logos/postgresql.svg',
+    link: 'https://www.postgresql.org/',
+    id: 'tech4',
+  },
+  {
+    name: 'AWS',
+    icon: '/logos/aws.svg',
+    link: 'https://aws.amazon.com/',
+    id: 'tech5',
+  },
+  {
+    name: 'React',
+    icon: '/logos/react.svg',
+    link: 'https://reactjs.org/',
+    id: 'tech6',
+  },
+  {
+    name: 'Typescript',
+    icon: '/logos/typescript.svg',
+    link: 'https://www.typescriptlang.org/',
+    id: 'tech7',
+  },
 ]
 
 export const PROJECTS: Project[] = [

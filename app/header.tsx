@@ -13,7 +13,7 @@ export function Header() {
           as="p"
           preset="fade"
           per="char"
-          className="text-zinc-600 dark:text-zinc-500"
+          className="text-[var(--light-text)] dark:text-[var(--dark-text)]"
           delay={0.5}
         >
           Data and Software Engineer
