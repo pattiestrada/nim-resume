@@ -24,11 +24,11 @@ body {
 }
 
 :root {
-  --light-text: #FF69B4; /* Bright pink for light mode */
-  --dark-text: #f9ccd4; /* Soft pink for dark mode */
+  --light-text: #27303F; /* Bright pink for light mode */
+  --dark-text: #6E496A; /* Soft pink for dark mode */
 }
 
 .dark {
-  --light-text: #FFC0CB; /* Optional override for dark mode */
-  --dark-text: #FF69B4; /* Bright pink for dark mode */
+  --light-text: #6E496A; /* Optional override for dark mode */
+  --dark-text: #27303F; /* Bright pink for dark mode */
 }

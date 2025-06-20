@@ -138,7 +138,7 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p>
             Focused on creating performant and innovative data pipelines and web applications.
             Bridging the gap between design and development.
           </p>
@@ -153,23 +153,23 @@ export default function Personal() {
         <div className="flex flex-col space-y-2">
           {EDUCATION.map((school) => (
             <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              className="relative overflow-hidden rounded-2xl p-[1px]"
               href={school.link}
               target="_blank"
               rel="noopener noreferrer"
               key={school.id}
             >
               <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                className="blur-2xl"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-[#6E496A] p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
                       {school.degree} in {school.fieldOfStudy}
                     </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
+                    <p className="text-[#D8C2C0] dark:text-zinc-400">
                       {school.institution}
                     </p>
                   </div>
@@ -190,16 +190,22 @@ export default function Personal() {
           className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
           size={64}
         />
-        <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-          <div className="flex flex-wrap gap-4">
+        <div className="relative h-full w-full rounded-[15px] bg-[#6E496A] p-4 dark:bg-zinc-950">
+          <div className="flex flex-wrap justify-center items-center gap-6">
             {TECHNOLOGIES.map((tech) => (
-              <div key={tech.id} className="flex items-center space-x-2">
-                <img
-                  src={tech.icon}
-                  alt={`${tech.name} Logo`}
-                  className="h-6 w-6 object-contain transition-transform duration-300 hover:scale-110 hover:translate-y-[-2px]" // Maintain aspect ratio
-                  />
-              </div>
+              <a
+              key={tech.id}
+              href={tech.link} // External link to the technology's URL
+              target="_blank" // Opens the link in a new tab
+              rel="noopener noreferrer" // Security best practices for external links
+              className="flex items-center space-x-2"
+            >
+              <img
+                src={tech.icon}
+                alt={`${tech.name} Logo`}
+                className="h-10 w-10 object-contain transition-transform duration-300 hover:scale-120 hover:translate-y-[-4px]" // Add hover animation
+              />
+            </a>
             ))}
           </div>
         </div>
@@ -224,17 +230,17 @@ export default function Personal() {
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-[#6E496A] p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
                       {job.title}
                     </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
+                    <p className="text-[#D8C2C0] dark:text-zinc-400">
                       {job.company}
                     </p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-[#D8C2C0] dark:text-zinc-400">
                     {job.start} - {job.end}
                   </p>
                 </div>
