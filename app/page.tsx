@@ -163,13 +163,13 @@ export default function Personal() {
                 className="blur-2xl"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-[#6E496A] p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
                       {school.degree} in {school.fieldOfStudy}
                     </h4>
-                    <p className="text-[#D8C2C0] dark:text-zinc-400">
+                    <p className="text-[#A3813E] dark:text-zinc-400">
                       {school.institution}
                     </p>
                   </div>
@@ -190,7 +190,7 @@ export default function Personal() {
           className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
           size={64}
         />
-        <div className="relative h-full w-full rounded-[15px] bg-[#6E496A] p-4 dark:bg-zinc-950">
+        <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
           <div className="flex flex-wrap justify-center items-center gap-6">
             {TECHNOLOGIES.map((tech) => (
               <a
@@ -230,17 +230,17 @@ export default function Personal() {
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-[#6E496A] p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
                       {job.title}
                     </h4>
-                    <p className="text-[#D8C2C0] dark:text-zinc-400">
+                    <p className="text-[#A3813E] dark:text-zinc-400">
                       {job.company}
                     </p>
                   </div>
-                  <p className="text-[#D8C2C0] dark:text-zinc-400">
+                  <p className="text-[#A3813E] dark:text-zinc-400">
                     {job.start} - {job.end}
                   </p>
                 </div>

@@ -20,15 +20,15 @@
   }
 }
 body {
-  background-color: #a87da3;
+  background-color: #ffffff;
 }
 
 :root {
-  --light-text: #27303F; /* Bright pink for light mode */
-  --dark-text: #6E496A; /* Soft pink for dark mode */
+  --light-text: #A33E59; /* Bright pink for light mode */
+  --dark-text: #A3813E; /* Soft pink for dark mode */
 }
 
 .dark {
-  --light-text: #6E496A; /* Optional override for dark mode */
-  --dark-text: #27303F; /* Bright pink for dark mode */
+  --light-text: #A3813E; /* Optional override for dark mode */
+  --dark-text: #A33E59; /* Bright pink for dark mode */
 }
