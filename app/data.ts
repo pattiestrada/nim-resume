@@ -1,11 +1,3 @@
-type Project = {
-  name: string
-  description: string
-  link: string
-  video: string
-  id: string
-}
-
 type Technologies = {
   name: string
   icon: string // URL to the icon image
@@ -51,16 +43,28 @@ export const TECHNOLOGIES: Technologies[] = [
     id: 'tech1',
   },
   {
-    name: 'Snowflake',
-    icon: '/logos/snowflake.svg',
-    link: 'https://www.snowflake.com/',
-    id: 'tech2',
+    name: 'React',
+    icon: '/logos/react.svg',
+    link: 'https://reactjs.org/',
+    id: 'tech6',
+  },
+  {
+    name: 'Typescript',
+    icon: '/logos/typescript.svg',
+    link: 'https://www.typescriptlang.org/',
+    id: 'tech7',
   },
   {
     name: 'Node.js',
     icon: '/logos/nodejs.svg',
     link: 'https://nodejs.org/',
     id: 'tech3',
+  },
+  {
+    name: 'Snowflake',
+    icon: '/logos/snowflake.svg',
+    link: 'https://www.snowflake.com/',
+    id: 'tech2',
   },
   {
     name: 'PostgreSQL',
@@ -75,37 +79,11 @@ export const TECHNOLOGIES: Technologies[] = [
     id: 'tech5',
   },
   {
-    name: 'React',
-    icon: '/logos/react.svg',
-    link: 'https://reactjs.org/',
-    id: 'tech6',
-  },
-  {
-    name: 'Typescript',
-    icon: '/logos/typescript.svg',
-    link: 'https://www.typescriptlang.org/',
-    id: 'tech7',
-  },
-]
-
-export const PROJECTS: Project[] = [
-  {
-    name: 'Motion Primitives Pro',
-    description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
-    id: 'project1',
-  },
-  {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-    id: 'project2',
-  },
+    name: 'Azure',
+    icon: '/logos/azure.svg',
+    link: 'https://azure.microsoft.com/',
+    id: 'tech8',
+  }
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
