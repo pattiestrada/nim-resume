@@ -19,6 +19,7 @@ type WorkExperience = {
   start: string
   end: string
   link: string
+  detail: string
   id: string
 }
 
@@ -114,6 +115,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2020',
     end: 'Present',
     link: 'https://www.libertymutual.com/',
+    detail: 'Lead data engineering projects, architected scalable pipelines, and mentored junior engineers.',
     id: 'work1',
   },
   {
@@ -122,6 +124,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2017',
     end: '2020',
     link: 'https://www.unh.edu/',
+    detail: 'Developed data solutions for academic research, optimized data workflows, and collaborated with cross-functional teams.',
     id: 'work2',
   },
   {
@@ -130,6 +133,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2013',
     end: '2017',
     link: 'https://www.snhu.edu/',
+    detail: 'Designed and implemented learning management system features, improved user experience, and integrated third-party tools.',
     id: 'work3',
   },
 ]

@@ -1,8 +1,9 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
+import { motion as fmotion, AnimatePresence } from 'framer-motion'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
+import React, { useState } from 'react'
 import {
   MorphingDialog,
   MorphingDialogTrigger,
@@ -41,56 +42,6 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
-type ProjectVideoProps = {
-  src: string
-}
-
-function ProjectVideo({ src }: ProjectVideoProps) {
-  return (
-    <MorphingDialog
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.3,
-      }}
-    >
-      <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
-        </MorphingDialogContent>
-        <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-          variants={{
-            initial: { opacity: 0 },
-            animate: {
-              opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
-            },
-            exit: { opacity: 0, transition: { duration: 0 } },
-          }}
-        >
-          <XIcon className="h-5 w-5 text-zinc-500" />
-        </MorphingDialogClose>
-      </MorphingDialogContainer>
-    </MorphingDialog>
-  )
-}
-
 function MagneticSocialLink({
   children,
   link,
@@ -126,6 +77,16 @@ function MagneticSocialLink({
 }
 
 export default function Personal() {
+  const [expandedJobs, setExpandedJobs] = useState<string[]>([])
+
+  const toggleJob = (jobId: string) => {
+    setExpandedJobs((prev) =>
+      prev.includes(jobId)
+        ? prev.filter((id) => id !== jobId)
+        : [...prev, jobId]
+    )
+  }
+
   return (
     <motion.main
       className="space-y-10"
@@ -224,33 +185,52 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
-            <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={job.id}
-            >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
+            <div key={job.id}>
+              <a
+                className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30 cursor-pointer block"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  toggleJob(job.id)
+                }}
+              >
+                <Spotlight
+                  className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                  size={64}
+                />
+                <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
+                  <div className="relative flex w-full flex-row justify-between">
+                    <div>
+                      <h4 className="font-normal dark:text-zinc-100">
+                        {job.title}
+                      </h4>
+                      <p className="text-[#A3813E] dark:text-zinc-400">
+                        {job.company}
+                      </p>
+                    </div>
                     <p className="text-[#A3813E] dark:text-zinc-400">
-                      {job.company}
+                      {job.start} - {job.end}
                     </p>
                   </div>
-                  <p className="text-[#A3813E] dark:text-zinc-400">
-                    {job.start} - {job.end}
-                  </p>
+                  <AnimatePresence>
+                    {expandedJobs.includes(job.id) && (
+                      <fmotion.div
+                        key="details"
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 16 }}
+                        transition={{ duration: 0.5 }}
+                        className="mt-4 text-zinc-700 dark:text-zinc-300"
+                      >
+                        <p>
+                          {job.detail}
+                        </p>
+                      </fmotion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
           ))}
         </div>
       </motion.section>
