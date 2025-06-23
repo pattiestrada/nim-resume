@@ -128,7 +128,7 @@ function MagneticSocialLink({
 export default function Personal() {
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-10"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
@@ -142,6 +142,11 @@ export default function Personal() {
             Focused on creating performant and innovative data pipelines and web applications.
             Bridging the gap between design and development.
           </p>
+          <img
+            src="/img/castle.png"
+            alt="Castle"
+            className="mx-auto my-6 h-35 w-auto rounded-lg object-contain"
+          />
         </div>
       </motion.section>
 
