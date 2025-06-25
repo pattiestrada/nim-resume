@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @custom-variant dark (&:is(.dark *));
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -31,4 +32,11 @@ body {
 .dark {
   --light-text: #A3813E; /* Optional override for dark mode */
   --dark-text: #A33E59; /* Bright pink for dark mode */
+}
+
+.job-detail-list {
+  font-family: 'Roboto', sans-serif;
+  font-size: .9rem;                  /* Example: slightly larger font */
+  color: #A33E59;                      /* Example: custom color */
+  letter-spacing: 0.01em;              /* Example: adjust letter spacing */
 }

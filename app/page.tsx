@@ -214,9 +214,13 @@ export default function Personal() {
                         transition={{ duration: 0.5 }}
                         className="mt-4 text-zinc-700 dark:text-zinc-300"
                       >
-                        <p>
-                          {job.detail}
-                        </p>
+                        <ul className="job-detail-list list-disc pl-6 space-y-1">
+                          {Array.isArray(job.detail)
+                            ? job.detail.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                              ))
+                            : <li>{job.detail}</li>}
+                        </ul>
                       </fmotion.div>
                     )}
                   </AnimatePresence>
