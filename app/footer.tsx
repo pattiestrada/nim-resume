@@ -4,9 +4,9 @@ import { TextLoop } from '@/components/ui/text-loop'
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
+    <footer className="mt-24 border-t border-zinc-100 px-0 py-4">
       <AnimatedBackground
-        className="rounded-lg bg-zinc-100 dark:bg-zinc-800"
+        className="rounded-lg bg-zinc-100"
         transition={{
           type: 'spring',
           bounce: 0,

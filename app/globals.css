@@ -25,13 +25,13 @@ body {
 }
 
 :root {
-  --light-text: #A33E59; /* Bright pink for light mode */
-  --dark-text: #A3813E; /* Soft pink for dark mode */
+  --light-text: #A33E59; 
+  --dark-text: #A3813E; 
 }
 
 .dark {
-  --light-text: #A3813E; /* Optional override for dark mode */
-  --dark-text: #A33E59; /* Bright pink for dark mode */
+  --light-text: #A33E59; 
+  --dark-text: #A33E59;
 }
 
 .job-detail-list {
