@@ -103,40 +103,6 @@ export default function Personal() {
         </div>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Education</h3>
-        <div className="flex flex-col space-y-2">
-          {EDUCATION.map((school) => (
-            <a
-              className="relative overflow-hidden rounded-2xl p-[1px]"
-              href={school.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={school.id}
-            >
-              <Spotlight
-                className="blur-2xl"
-                size={64}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {school.degree} in {school.fieldOfStudy}
-                    </h4>
-                    <p className="text-[#A3813E] dark:text-zinc-400">
-                      {school.institution}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </motion.section>
 
       <motion.section
         variants={VARIANTS_SECTION}
@@ -170,6 +136,7 @@ export default function Personal() {
       </div>
     </motion.section>
 
+    
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
@@ -227,6 +194,44 @@ export default function Personal() {
                 </div>
               </a>
             </div>
+          ))}
+        </div>
+      </motion.section>
+
+
+
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Education</h3>
+        <div className="flex flex-col space-y-2">
+          {EDUCATION.map((school) => (
+            <a
+              className="relative overflow-hidden rounded-2xl p-[1px]"
+              href={school.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={school.id}
+            >
+              <Spotlight
+                className="blur-2xl"
+                size={64}
+              />
+              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {school.degree} in {school.fieldOfStudy}
+                    </h4>
+                    <p className="text-[#A3813E] dark:text-zinc-400">
+                      {school.institution}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </motion.section>

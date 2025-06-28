@@ -73,6 +73,12 @@ export const TECHNOLOGIES: Technologies[] = [
     id: 'tech4',
   },
   {
+    name: 'DBT',
+    icon: '/logos/dbt.png',
+    link: 'https://www.getdbt.com/',
+    id: 'tech9',
+  },
+  {
     name: 'AWS',
     icon: '/logos/aws.svg',
     link: 'https://aws.amazon.com/',
@@ -94,9 +100,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Present',
     link: 'https://www.libertymutual.com/',
     detail: [
-      'Lead data engineering projects',
-      'Architected scalable pipelines',
-      'Mentored junior engineers',
+      'Lead multiple system migration initiatives, modernizing legacy infrastructure by transitioning to scalable cloud-based architectures using diverse tech stacks.',
+      'Develop and manage database objects across PostgreSQL, Synapse Analytics, and Snowflake to support scalable data delivery pipelines and stakeholder reporting.',
+      'Build new features for internal web applications using React, Node.js, and TypeScript to support business operations.',
     ],    id: 'work1',
   },
   {
@@ -106,22 +112,10 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: '2020',
     link: 'https://www.unh.edu/',
     detail: [
-      'Lead data engineering projects',
-      'Architected scalable pipelines',
-      'Mentored junior engineers',
+      'Designed and implemented Python-based processes for ingesting and transforming educational data.',
+      'Leveraged Rundeck to orchestrate automated jobs processing educational data.',
+      'Managed schema changes, performance tuning, and data integrity for a MariaDB database used in educational data workflows.',
     ],    id: 'work2',
-  },
-  {
-    company: 'Southern New Hampshire University',
-    title: 'LMS Developer',
-    start: '2013',
-    end: '2017',
-    link: 'https://www.snhu.edu/',
-    detail: [
-      'Lead data engineering projects',
-      'Architected scalable pipelines',
-      'Mentored junior engineers',
-    ],    id: 'work3',
   },
 ]
 
@@ -145,9 +139,9 @@ export const EDUCATION: Education[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: 'Teaching HTML Made Me Miss the 90s',
+    description: 'Reflections on creativity in web design',
+    link: '/blog/teaching-html-made-me-miss-the-90s',
     uid: 'blog-1',
   },
   {
