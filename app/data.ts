@@ -1,8 +1,7 @@
-type Project = {
+type Technologies = {
   name: string
-  description: string
+  icon: string // URL to the icon image
   link: string
-  video: string
   id: string
 }
 
@@ -11,6 +10,15 @@ type WorkExperience = {
   title: string
   start: string
   end: string
+  link: string
+  detail: string[]
+  id: string
+}
+
+type Education = {
+  institution: string
+  degree: string
+  fieldOfStudy: string
   link: string
   id: string
 }
@@ -27,93 +35,130 @@ type SocialLink = {
   link: string
 }
 
-export const PROJECTS: Project[] = [
+export const TECHNOLOGIES: Technologies[] = [
   {
-    name: 'Motion Primitives Pro',
-    description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
-    id: 'project1',
+    name: 'Python',
+    icon: '/logos/python.svg',
+    link: 'https://www.python.org/',
+    id: 'tech1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
-    id: 'project2',
+    name: 'React',
+    icon: '/logos/react.svg',
+    link: 'https://reactjs.org/',
+    id: 'tech6',
   },
+  {
+    name: 'Typescript',
+    icon: '/logos/typescript.svg',
+    link: 'https://www.typescriptlang.org/',
+    id: 'tech7',
+  },
+  {
+    name: 'Node.js',
+    icon: '/logos/nodejs.svg',
+    link: 'https://nodejs.org/',
+    id: 'tech3',
+  },
+  {
+    name: 'Snowflake',
+    icon: '/logos/snowflake.svg',
+    link: 'https://www.snowflake.com/',
+    id: 'tech2',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: '/logos/postgresql.svg',
+    link: 'https://www.postgresql.org/',
+    id: 'tech4',
+  },
+  {
+    name: 'DBT',
+    icon: '/logos/dbt.png',
+    link: 'https://www.getdbt.com/',
+    id: 'tech9',
+  },
+  {
+    name: 'AWS',
+    icon: '/logos/aws.svg',
+    link: 'https://aws.amazon.com/',
+    id: 'tech5',
+  },
+  {
+    name: 'Azure',
+    icon: '/logos/azure.svg',
+    link: 'https://azure.microsoft.com/',
+    id: 'tech8',
+  }
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Liberty Mutual Insurance',
+    title: 'Sr. Data Engineer',
+    start: '2020',
     end: 'Present',
-    link: 'https://ibelick.com',
-    id: 'work1',
+    link: 'https://www.libertymutual.com/',
+    detail: [
+      'Lead multiple system migration initiatives, modernizing legacy infrastructure by transitioning to scalable cloud-based architectures using diverse tech stacks.',
+      'Develop and manage database objects across PostgreSQL, Synapse Analytics, and Snowflake to support scalable data delivery pipelines and stakeholder reporting.',
+      'Build new features for internal web applications using React, Node.js, and TypeScript to support business operations.',
+    ],    id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
-    id: 'work2',
-  },
-  {
-    company: 'Freelance',
-    title: 'Front-end Developer',
+    company: 'University of New Hampshire',
+    title: 'Data Engineer',
     start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
-    id: 'work3',
+    end: '2020',
+    link: 'https://www.unh.edu/',
+    detail: [
+      'Designed and implemented Python-based processes for ingesting and transforming educational data.',
+      'Leveraged Rundeck to orchestrate automated jobs processing educational data.',
+      'Managed schema changes, performance tuning, and data integrity for a MariaDB database used in educational data workflows.',
+    ],    id: 'work2',
   },
 ]
 
+export const EDUCATION: Education[] = [
+  {
+    institution: 'University of New Hampshire',
+    degree: 'Bachelor of Science',
+    fieldOfStudy: 'Computer Science',
+    link: 'https://www.unh.edu/',
+    id: 'edu1',
+  },
+  {
+    institution: 'University of New Hampshire',
+    degree: 'Master of Science',
+    fieldOfStudy: 'Cybersecurity',
+    link: 'https://www.unh.edu/',
+    id: 'edu2',
+  },
+]
+
+
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: 'Teaching HTML Made Me Miss the 90s',
+    description: 'Reflections on creativity in web design',
+    link: '/blog/teaching-html-made-me-miss-the-90s',
     uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/pattiestrada',
   },
   {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    label: 'X (Twitter)',
+    link: 'https://x.com/p_lesstrada',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.linkedin.com/in/patricia-estrada-a9819865/',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'estrada.patti@gmail.com'

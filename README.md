@@ -38,3 +38,10 @@ You can deploy your site to any hosting platform that supports Next.js. For the 
 ## About
 
 Nim is designed to make personal branding effortless and beautiful. If you enjoy it, consider sharing it and exploring [Motion-Primitives Pro](https://pro.motion-primitives.com/).
+
+## Modifications by Patricia Estrada, June 2025
+
+- Added header images
+- Drop-down box for Work Experience
+- Skills icon bar
+- Removed light/dark mode

@@ -1,23 +1,18 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
+import { motion as fmotion, AnimatePresence } from 'framer-motion'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
-import {
-  MorphingDialog,
-  MorphingDialogTrigger,
-  MorphingDialogContent,
-  MorphingDialogClose,
-  MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
-  PROJECTS,
+  TECHNOLOGIES,
   WORK_EXPERIENCE,
   BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
+  EDUCATION,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -37,56 +32,6 @@ const VARIANTS_SECTION = {
 
 const TRANSITION_SECTION = {
   duration: 0.3,
-}
-
-type ProjectVideoProps = {
-  src: string
-}
-
-function ProjectVideo({ src }: ProjectVideoProps) {
-  return (
-    <MorphingDialog
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.3,
-      }}
-    >
-      <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
-        </MorphingDialogContent>
-        <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-          variants={{
-            initial: { opacity: 0 },
-            animate: {
-              opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
-            },
-            exit: { opacity: 0, transition: { duration: 0 } },
-          }}
-        >
-          <XIcon className="h-5 w-5 text-zinc-500" />
-        </MorphingDialogClose>
-      </MorphingDialogContainer>
-    </MorphingDialog>
-  )
 }
 
 function MagneticSocialLink({
@@ -124,9 +69,19 @@ function MagneticSocialLink({
 }
 
 export default function Personal() {
+  const [expandedJobs, setExpandedJobs] = useState<string[]>([])
+
+  const toggleJob = (jobId: string) => {
+    setExpandedJobs((prev) =>
+      prev.includes(jobId)
+        ? prev.filter((id) => id !== jobId)
+        : [...prev, jobId]
+    )
+  }
+
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-10"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
@@ -136,42 +91,52 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
+          <p>
+            Focused on creating performant and innovative data pipelines and web applications.
             Bridging the gap between design and development.
           </p>
+          <img
+            src="/img/castle.png"
+            alt="Castle"
+            className="mx-auto my-6 h-35 w-auto rounded-lg object-contain"
+          />
         </div>
       </motion.section>
+
 
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
-              </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          ))}
+        <h3 className="mb-5 text-lg font-medium">Skills</h3>
+        <div className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30">
+        <Spotlight
+          className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+          size={64}
+        />
+        <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {TECHNOLOGIES.map((tech) => (
+              <a
+              key={tech.id}
+              href={tech.link} // External link to the technology's URL
+              target="_blank" // Opens the link in a new tab
+              rel="noopener noreferrer" // Security best practices for external links
+              className="flex items-center space-x-2"
+            >
+              <img
+                src={tech.icon}
+                alt={`${tech.name} Logo`}
+                className="h-10 w-10 object-contain transition-transform duration-300 hover:scale-120 hover:translate-y-[-4px]" // Add hover animation
+              />
+            </a>
+            ))}
+          </div>
         </div>
-      </motion.section>
+      </div>
+    </motion.section>
 
+    
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
@@ -179,30 +144,91 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
+            <div key={job.id}>
+              <a
+                className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30 cursor-pointer block"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  toggleJob(job.id)
+                }}
+              >
+                <Spotlight
+                  className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                  size={64}
+                />
+                <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
+                  <div className="relative flex w-full flex-row justify-between">
+                    <div>
+                      <h4 className="font-normal dark:text-zinc-100">
+                        {job.title}
+                      </h4>
+                      <p className="text-[#A3813E] dark:text-zinc-400">
+                        {job.company}
+                      </p>
+                    </div>
+                    <p className="text-[#A3813E] dark:text-zinc-400">
+                      {job.start} - {job.end}
+                    </p>
+                  </div>
+                  <AnimatePresence>
+                    {expandedJobs.includes(job.id) && (
+                      <fmotion.div
+                        key="details"
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 16 }}
+                        transition={{ duration: 0.5 }}
+                        className="mt-4 text-zinc-700 dark:text-zinc-300"
+                      >
+                        <ul className="job-detail-list list-disc pl-6 space-y-1">
+                          {Array.isArray(job.detail)
+                            ? job.detail.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                              ))
+                            : <li>{job.detail}</li>}
+                        </ul>
+                      </fmotion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+
+
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Education</h3>
+        <div className="flex flex-col space-y-2">
+          {EDUCATION.map((school) => (
             <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
+              className="relative overflow-hidden rounded-2xl p-[1px]"
+              href={school.link}
               target="_blank"
               rel="noopener noreferrer"
-              key={job.id}
+              key={school.id}
             >
               <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                className="blur-2xl"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
+                      {school.degree} in {school.fieldOfStudy}
                     </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
+                    <p className="text-[#A3813E] dark:text-zinc-400">
+                      {school.institution}
                     </p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.start} - {job.end}
-                  </p>
                 </div>
               </div>
             </a>
