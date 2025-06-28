@@ -144,20 +144,6 @@ export const BLOG_POSTS: BlogPost[] = [
     link: '/blog/teaching-html-made-me-miss-the-90s',
     uid: 'blog-1',
   },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
-  },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
