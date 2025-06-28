@@ -7,14 +7,14 @@ export function Header() {
   return (
     <header className="mb-8 flex items-center justify-between">
       <div>
-        <Link href="/" className="font-medium text-black dark:text-white">
+        <Link href="/" className="font-medium text-black">
           Patricia Estrada
         </Link>
         <TextEffect
           as="p"
           preset="fade"
           per="char"
-          className="text-[var(--light-text)] dark:text-[var(--dark-text)]"
+          className="text-[var(--light-text)]"
           delay={0.5}
         >
           Senior Software Engineer
@@ -23,7 +23,7 @@ export function Header() {
           as="p"
           preset="fade"
           per="char"
-          className="text-[var(--light-text)] dark:text-[var(--dark-text)]"
+          className="text-[var(--light-text)]"
           delay={1.0}
         >
           Based in Dover, NH
