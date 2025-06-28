@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
-import { Header } from './header'
-import { Footer } from './footer'
+import '@/app/globals.css'
+import { Header } from '@/app/header'
+import { Footer } from '@/app/footer'
 import { ThemeProvider } from 'next-themes'
 
 export const viewport: Viewport = {
