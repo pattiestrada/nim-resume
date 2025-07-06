@@ -25,18 +25,18 @@ body {
 }
 
 :root {
-  --light-text: #A33E59; 
-  --dark-text: #A3813E; 
+  --light-text: #803146; 
+  --dark-text: #472D0A; 
 }
 
 .dark {
-  --light-text: #A33E59; 
-  --dark-text: #A33E59;
+  --light-text: #803146; 
+  --dark-text: #803146;
 }
 
 .job-detail-list {
   font-family: 'Roboto', sans-serif;
   font-size: .9rem;                  /* Example: slightly larger font */
-  color: #A33E59;                      /* Example: custom color */
+  color: #803146;                      /* Example: custom color */
   letter-spacing: 0.01em;              /* Example: adjust letter spacing */
 }
