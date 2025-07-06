@@ -32,6 +32,18 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  metadataBase: new URL('https://www.patti.codes'),
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Patricia Estrada',
+    description:
+      'Personal website and portfolio of Patricia Estrada. Software engineer, web designer, and writer. Showcasing work experience, skills, blog posts, and projects.',
+    creator: '@pattycodes',
+    images: ['/img/og.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 const geist = Geist({
