@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: 'Patricia Estrada',
     description:
       'Personal website and portfolio of Patricia Estrada. Software engineer, web designer, and writer.',
-    url: 'https://patti.codes',
+    url: 'https://www.patti.codes',
     siteName: 'Patricia Estrada',
     images: [
       {
