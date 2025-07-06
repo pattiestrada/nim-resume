@@ -274,13 +274,48 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Connect</h3>
-        <p className="mb-5 text-zinc-600">
-          Feel free to contact me at{' '}
-          <a className="underline" href={`mailto:${EMAIL}`}>
-            {EMAIL}
-          </a>
-        </p>
+        <h3 className="mb-5 text-lg font-medium">Contact Me</h3>
+        <form
+          className="max-w-md mx-auto bg-[#F4E1E6] rounded-2xl p-6 flex flex-col gap-4 shadow"
+          action="https://formspree.io/f/meokwnle"
+          method="POST"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="rounded px-3 py-2 border border-zinc-300 bg-white focus:outline-none"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="rounded px-3 py-2 border border-zinc-300 bg-white focus:outline-none"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            className="rounded px-3 py-2 border border-zinc-300 bg-white focus:outline-none"
+            rows={4}
+          />
+          <button
+            type="submit"
+            className="bg-[#A3813E] text-white rounded px-4 py-2 hover:bg-[#803146] transition-colors"
+          >
+            Send
+          </button>
+        </form>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Socials</h3>
+
         <div className="flex items-center justify-start space-x-3">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
