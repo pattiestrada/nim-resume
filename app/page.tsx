@@ -45,7 +45,7 @@ function MagneticSocialLink({
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-[#C8CEC2] hover:bg-[#636A5E]"
       >
         {children}
         <svg
@@ -157,7 +157,7 @@ export default function Personal() {
                   className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl"
                   size={64}
                 />
-                <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 ">
+                <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] hover:bg-[#e2bfc9] transition-colors duration-200 p-4 ">
                   <div className="relative flex w-full flex-row justify-between">
                     <div>
                       <h4 className="font-normal">
@@ -219,7 +219,7 @@ export default function Personal() {
                 className="blur-2xl"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] p-4 ">
+              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] hover:bg-[#e2bfc9] transition-colors duration-200 p-4 ">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal">
@@ -240,35 +240,33 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
-        <div className="flex flex-col space-y-0">
-          <AnimatedBackground
-            enableHover
-            className="h-full w-full rounded-lg bg-zinc-1000"
-            transition={{
-              type: 'spring',
-              bounce: 0,
-              duration: 0.2,
-            }}
-          >
-            {BLOG_POSTS.map((post) => (
-              <Link
-                key={post.uid}
-                className="-mx-3 rounded-xl px-3 py-3"
-                href={post.link}
-                data-id={post.uid}
-              >
-                <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal">
-                    {post.title}
-                  </h4>
-                  <p className="text-zinc-500">
-                    {post.description}
-                  </p>
+        <h3 className="mb-5 text-lg font-medium">Blog</h3>
+        <div className="flex flex-col space-y-2">
+          {BLOG_POSTS.map((post) => (
+            <a
+              className="relative overflow-hidden rounded-2xl p-[1px]"
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Spotlight
+                className="blur-2xl"
+                size={64}
+              />
+              <div className="relative h-full w-full rounded-full bg-[#F4E1E6] hover:bg-[#e2bfc9] transition-colors duration-200 p-4">
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal">
+                      {post.title}
+                    </h4>
+                    <p className="text-[#A3813E]">
+                      {post.description}
+                    </p>
+                  </div>
                 </div>
-              </Link>
-            ))}
-          </AnimatedBackground>
+              </div>
+            </a>
+          ))}
         </div>
       </motion.section>
 

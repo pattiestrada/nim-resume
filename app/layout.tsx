@@ -14,7 +14,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Patricia Estrada',
   description:
-    'Personal website and portfolio of Patricia Estrada. Data engineer, educator, and writer. Showcasing work experience, skills, blog posts, and projects.',
+    'Personal website and portfolio of Patricia Estrada. Software engineer, web designer, and writer. Showcasing work experience, skills, blog posts, and projects.',
+  openGraph: {
+    title: 'Patricia Estrada',
+    description:
+      'Personal website and portfolio of Patricia Estrada. Software engineer, web designer, and writer.',
+    url: 'https://patti.codes',
+    siteName: 'Patricia Estrada',
+    images: [
+      {
+        url: '/img/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Patricia Estrada Portfolio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 const geist = Geist({
