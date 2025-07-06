@@ -245,6 +245,7 @@ export default function Personal() {
           {BLOG_POSTS.map((post) => (
             <a
               className="relative overflow-hidden rounded-2xl p-[1px]"
+              key={post.uid}
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
