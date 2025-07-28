@@ -162,3 +162,18 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 export const EMAIL = 'estrada.patti@gmail.com'
+
+export const INTERESTS = [
+  {
+    name: 'Learning languages',
+    description: 'Currently studying Japanese and working toward the JLPT N3 certification.',
+  },
+  {
+    name: 'Illustration',
+    description: 'I enjoy drawing in Procreate and watercolor as a physical medium. I also design logos for internal teams and products at work.',
+  },
+  {
+    name: 'Cooking',
+    description: 'I love cooking Asian cuisine, especially Japanese and Korean dishes. My favorite recipes are tonkatsu and kimchi jjigae.',
+  }
+]

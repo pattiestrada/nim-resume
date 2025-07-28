@@ -4,8 +4,6 @@ import { motion as fmotion, AnimatePresence } from 'framer-motion'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import React, { useState } from 'react'
-import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   TECHNOLOGIES,
   WORK_EXPERIENCE,
@@ -13,6 +11,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
   EDUCATION,
+  INTERESTS,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -93,7 +92,9 @@ export default function Personal() {
         <div className="flex-1">
           <p>
             Focused on creating performant and innovative data pipelines and web applications.
-            Bridging the gap between design and development.
+            Cloud migration and optimization specialist with a passion for
+            building scalable solutions. Committed to continuous learning and
+            staying updated with the latest technologies.
           </p>
           <img
             src="/img/castle.png"
@@ -108,7 +109,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Skills</h3>
+        <h3>Skills</h3>
         <div className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] ">
         <Spotlight
           className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl"
@@ -141,7 +142,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
+        <h3>Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
             <div key={job.id}>
@@ -163,11 +164,11 @@ export default function Personal() {
                       <h4 className="font-normal">
                         {job.title}
                       </h4>
-                      <p className="text-[#A3813E]">
+                      <p className="text-[#472D0A]">
                         {job.company}
                       </p>
                     </div>
-                    <p className="text-[#A3813E]">
+                    <p className="text-[#472D0A]">
                       {job.start} - {job.end}
                     </p>
                   </div>
@@ -198,14 +199,11 @@ export default function Personal() {
         </div>
       </motion.section>
 
-
-
-
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Education</h3>
+        <h3>Education</h3>
         <div className="flex flex-col space-y-2">
           {EDUCATION.map((school) => (
             <a
@@ -225,7 +223,7 @@ export default function Personal() {
                     <h4 className="font-normal">
                       {school.degree} in {school.fieldOfStudy}
                     </h4>
-                    <p className="text-[#A3813E]">
+                    <p className="text-[#472D0A]">
                       {school.institution}
                     </p>
                   </div>
@@ -240,7 +238,26 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Blog</h3>
+        <h3>Interests</h3>
+        <div className="flex flex-col space-y-2">
+          {INTERESTS.map((interest) => (
+            <div
+              key={interest.name}
+              className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] hover:bg-[#e2bfc9] transition-colors duration-200 p-4">
+                <div>
+                  <h4 className="font-normal">{interest.name}</h4>
+                  <p className="text-[#472D0A] text-sm">{interest.description}</p>
+                </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3>Blog</h3>
         <div className="flex flex-col space-y-2">
           {BLOG_POSTS.map((post) => (
             <a
@@ -254,13 +271,13 @@ export default function Personal() {
                 className="blur-2xl"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-full bg-[#F4E1E6] hover:bg-[#e2bfc9] transition-colors duration-200 p-4">
+              <div className="relative h-full w-full rounded-[15px] bg-[#F4E1E6] hover:bg-[#e2bfc9] transition-colors duration-200 p-4">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal">
                       {post.title}
                     </h4>
-                    <p className="text-[#A3813E]">
+                    <p className="text-[#472D0A]">
                       {post.description}
                     </p>
                   </div>
@@ -275,7 +292,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Contact Me</h3>
+        <h3>Contact Me</h3>
         <form
           className="max-w-md mx-auto bg-[#F4E1E6] rounded-2xl p-6 flex flex-col gap-4 shadow"
           action="https://formspree.io/f/meokwnle"
@@ -304,7 +321,7 @@ export default function Personal() {
           />
           <button
             type="submit"
-            className="bg-[#A3813E] text-white rounded px-4 py-2 hover:bg-[#803146] transition-colors"
+            className="bg-[#472D0A] text-white rounded px-4 py-2 hover:bg-[#803146] transition-colors"
           >
             Send
           </button>
@@ -315,9 +332,8 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Socials</h3>
-
-        <div className="flex items-center justify-start space-x-3">
+        <h3>Socials</h3>
+        <div className="flex items-center justify-center space-x-3">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
               {link.label}
